@@ -44,3 +44,11 @@ h2 {
     left: 0;
     top: 150px;
 }
+
+.card-container {
+    display: grid;
+    padding: 30px;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+    grid-template-rows: auto;
+}
