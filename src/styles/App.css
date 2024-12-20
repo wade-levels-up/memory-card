@@ -1,0 +1,46 @@
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1rem;
+}
+
+.flx-col-centred {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flx-row-centred {
+    display: flex;
+    justify-content: center;
+}
+
+.flx-grow {
+    flex: 1
+}
+
+.txt-centred {
+    text-align: center;
+}
+
+.score, .high-score {
+    background-color: black;
+    color: whitesmoke;
+    position: fixed;
+    padding: 0.5rem;
+    width: 80px;
+    line-height: 1.5;
+    height: fit-content;
+}
+
+.score {
+    left: 0;
+    top: 80px;
+}
+
+.high-score {
+    left: 0;
+    top: 150px;
+}
