@@ -114,11 +114,19 @@ header img {
 
 footer {
     display: flex;
+    background-color: black;
+    flex-direction: column;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.madeby {
+    display: flex;
     align-items: center;
     gap: 0.4rem;
-    background-color: black;
     color: whitesmoke;
     font-family: ds-digital;
+    font-size: 1rem;
 }
 
 .iconGit svg, .iconReact svg {
@@ -149,6 +157,19 @@ footer {
 
 .shuffle-btn:hover {
     border: 5px double orange;   
+}
+
+.credit {
+    font-size: 0.8rem;
+}
+
+a {
+    color: cyan;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 @keyframes spin {
