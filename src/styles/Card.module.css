@@ -23,3 +23,7 @@
     font-size: 1.2rem;
     text-align: center;
 }
+
+.card:hover {
+    transform: scale(1.05);
+}

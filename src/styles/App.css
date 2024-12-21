@@ -110,7 +110,7 @@ header img {
     padding: 30px;
     gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    grid-template-rows: auto;
+    grid-auto-rows: 1fr;
 }
 
 footer {
