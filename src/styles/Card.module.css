@@ -1,10 +1,18 @@
 .card {
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
-    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border: 4px inset rgb(99, 95, 155);
+    border-radius: 8px;
     padding: 0.5rem;
     background-color: white;
+    font-family: monospace;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.8);
+    min-width: 130px;
+    min-height: 165px;
+    outline: 2px outset orange;
 }
 
 .image {
