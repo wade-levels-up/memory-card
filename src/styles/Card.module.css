@@ -8,6 +8,7 @@
 
 .image {
     width: 100%;
+    mix-blend-mode: multiply;
 }
 
 .h3 {
