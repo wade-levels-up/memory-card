@@ -79,7 +79,7 @@ function App() {
   return (
     <>
       <header className='flx-column-centred'>
-        <img className="lightPadding" src={'/src/assets/classic_logo.png'} alt="Digimon Logo with rookie Digimon characters"></img>
+        <img className="lightPadding" src={'../src/assets/classic_logo.png'} alt="Digimon Logo with rookie Digimon characters"></img>
         <h1 className="white-font">Memory Card Game</h1>
       </header>
       <main className='flx-col-centred flx-grow'>
