@@ -4,11 +4,11 @@
     border: 2px solid black;
     border-radius: 15px;
     padding: 0.5rem;
+    background-color: white;
 }
 
 .image {
     width: 100%;
-    mix-blend-mode: multiply;
 }
 
 .h3 {

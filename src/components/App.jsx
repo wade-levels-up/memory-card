@@ -76,49 +76,53 @@ function App() {
 
   return (
     <>
-      <header className='flx-row-centred'>
-        <h1>Digimon Memory Card</h1>
+      <header className='flx-column-centred'>
+        <img className="lightPadding" src={'/src/assets/Digimon_Adventure_logo.webp'} alt="Digimon Logo with rookie Digimon characters"></img>
+        <h1 className="white-font">Memory Card Game</h1>
       </header>
       <main className='flx-col-centred flx-grow'>
 
-        <div className='score'>
-          <h2>Score</h2>
-          <span>{score}</span>
-        </div>
-
-        <div className='high-score'>
-          <h2>High-Score</h2>
-          <span>{highScore}</span>
+        <div className="flx-row-centred scorepanel">
+          <div className='score'>
+            <h2>Score</h2>
+            <span>{score}</span>
+          </div>
+          <div className='high-score'>
+            <h2>High-Score</h2>
+            <span>{highScore}</span>
+          </div>
         </div>
 
         <div className='flx-row-centred'>
-          <p className='txt-centred'>Pick unique cards to earn points<br></br>
+          <p className='txt-centred white-font instructions'>Pick unique cards to earn points.<br></br>
              The game ends if you pick the same card twice.
           </p>
         </div>
 
-        <ul className="card-container">
-          {activeCards.map((digimon) => {
-            return (
-              <Card 
-                key={digimon.name} 
-                cardKey={digimon.name}
-                name={digimon.name} 
-                image={digimon.img} 
-                setChosenCardsFn={setChosenCardsFn}
-                resetChosenCardsFn={resetChosenCardsFn}
-                incrementScoreFn={incrementScoreFn}
-                resetScoreFn={resetScoreFn}
-                shuffleHand={setRandomHand}
-                handleHighScore={handleHighScore}
-                includesCard={includesCard}
-              />
-            )
-          })}
-        </ul>
+        <div className="card-main">
+          <ul className="card-container">
+            {activeCards.map((digimon) => {
+              return (
+                <Card
+                  key={digimon.name}
+                  cardKey={digimon.name}
+                  name={digimon.name}
+                  image={digimon.img}
+                  setChosenCardsFn={setChosenCardsFn}
+                  resetChosenCardsFn={resetChosenCardsFn}
+                  incrementScoreFn={incrementScoreFn}
+                  resetScoreFn={resetScoreFn}
+                  shuffleHand={setRandomHand}
+                  handleHighScore={handleHighScore}
+                  includesCard={includesCard}
+                />
+              )
+            })}
+          </ul>
+        </div>
 
       </main>
-      <footer className='flx-row-centred'>
+      <footer className='flx-row-centred lightPadding'>
         Created by Wade
       </footer>
     </>
