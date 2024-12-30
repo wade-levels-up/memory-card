@@ -10,10 +10,19 @@ function App() {
   const [chosenCards, setChosenCards] = useState([]);
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://digimon-api.vercel.app/api/digimon')
-    .then(response => response.json())
+    fetch('https://digimon-api.vercel.app/api/digimons')
+    .then((response) => {
+      if (response.status >= 400) {
+        const error = new Error("Server Error");
+        error.status = response.status;
+        throw error;
+      }
+      return response.json();
+    })
     .then((data) => {
       let thirtyEntries = []
       for (let i = 0; i < 30; i++) {
@@ -21,8 +30,9 @@ function App() {
       }
       setData(thirtyEntries)
     })
-    .catch(error => console.error('Error fetching data:', error))
-  }, [])
+    .catch(error => setError({ message: error.message, status: error.status }))
+    .finally(setLoading(false));
+  }, []);
 
   useEffect(() => {
     if (data.length > 0) {
@@ -75,6 +85,17 @@ function App() {
       setHighScore(score);
     }
   }
+
+  if (loading) return (
+    <div className="status-message">
+      <h1 className="white-font">Loading...</h1>
+    </div>
+  )
+  if (error) return (
+    <div className="status-message">
+      <h1 className="white-font">Error: {error.status} {error.message}</h1>
+    </div>
+  )
 
   return (
     <>
