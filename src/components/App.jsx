@@ -14,7 +14,7 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://digimon-api.vercel.app/api/digimons')
+    fetch('https://digimon-api.vercel.app/api/digimon')
     .then((response) => {
       if (response.status >= 400) {
         const error = new Error("Server Error");
